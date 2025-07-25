@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostal Margarita - Isle del Sol, Bolivia | Experience Paradise</title>
+    <meta name="description" content="Experience the magic of Isle del Sol at Hostal Margarita. Comfortable accommodation with breathtaking views of Lake Titicaca in Bolivia.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Hostal Margarita</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-translate="nav-home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-translate="nav-about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#rooms" class="nav-link" data-translate="nav-rooms">Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#activities" class="nav-link" data-translate="nav-activities">Activities</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-translate="nav-contact">Contact</a>
+                </li>
+            </ul>
+            <div class="language-toggle">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-image">
+            <img src="main.jpeg" alt="Hostal Margarita with rainbow over Lake Titicaca">
+        </div>
+        <div class="hero-content">
+            <h1 data-translate="hero-title">Welcome to Hostal Margarita</h1>
+            <p data-translate="hero-subtitle">Experience the magic of Isle del Sol on the mystical Lake Titicaca</p>
+            <a href="#contact" class="cta-button" data-translate="hero-cta">Book Your Stay</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-translate="about-title">Discover Paradise on Isle del Sol</h2>
+                    <p data-translate="about-description">Nestled on the sacred Isle del Sol in Bolivia's stunning Lake Titicaca, Hostal Margarita offers an authentic and comfortable retreat where ancient Inca legends come alive. Our charming hostal provides the perfect base to explore this mystical island, known as the birthplace of the sun in Inca mythology.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-mountain"></i>
+                            <h3 data-translate="feature-views-title">Breathtaking Views</h3>
+                            <p data-translate="feature-views-desc">Wake up to stunning panoramic views of Lake Titicaca and the surrounding Andes mountains.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wifi"></i>
+                            <h3 data-translate="feature-comfort-title">Modern Comfort</h3>
+                            <p data-translate="feature-comfort-desc">Enjoy modern amenities including WiFi, hot water, and comfortable beds in a traditional setting.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <h3 data-translate="feature-cuisine-title">Local Cuisine</h3>
+                            <p data-translate="feature-cuisine-desc">Savor delicious traditional Bolivian dishes made with fresh, local ingredients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="rooms">
+        <div class="container">
+            <h2 data-translate="rooms-title">Our Accommodations</h2>
+            <p class="section-description" data-translate="rooms-description">Experience comfort and traditional Bolivian charm in our beautifully decorated rooms</p>
+            
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-image-photo">
+                        <img src="1 bedroom.jpg" alt="Traditional Room with Colorful Andean Art">
+                    </div>
+                    <div class="room-content">
+                        <h3 data-translate="room-traditional-title">Traditional Room</h3>
+                        <p data-translate="room-traditional-desc">Cozy room featuring beautiful traditional Andean artwork and comfortable bedding. Perfect for couples or solo travelers seeking an authentic cultural experience.</p>
+                        <ul class="amenities">
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-bathroom">Private bathroom</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-decor">Traditional decor</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-water">Hot water</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-bedding">Comfortable bedding</span></li>
+                        </ul>
+                        <div class="room-footer">
+                            <a href="https://wa.me/59171270122?text=Hello! I would like to book the Traditional Room at Hostal Margarita on Isle del Sol. Could you please check availability and current rates?" class="book-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> <span data-translate="book-now">Book Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="room-card">
+                    <div class="room-image-photo">
+                        <img src="2 bedroom.jpg" alt="Comfortable Double Room">
+                    </div>
+                    <div class="room-content">
+                        <h3 data-translate="room-comfort-title">Comfort Room</h3>
+                        <p data-translate="room-comfort-desc">Spacious and comfortable room with quality bedding and modern amenities. Ideal for travelers who want comfort while experiencing island life.</p>
+                        <ul class="amenities">
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-queen-bed">Queen-size bed</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-bathroom">Private bathroom</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-mountain-views">Mountain views</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-storage">Extra storage space</span></li>
+                        </ul>
+                        <div class="room-footer">
+                            <a href="https://wa.me/59171270122?text=Hello! I would like to book the Comfort Room at Hostal Margarita on Isle del Sol. Could you please check availability and current rates?" class="book-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> <span data-translate="book-now">Book Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="room-card">
+                    <div class="room-image-photo">
+                        <img src="3 bedroom.jpg" alt="Premium Room with Lake Views">
+                    </div>
+                    <div class="room-content">
+                        <h3 data-translate="room-superior-title">Superior Room</h3>
+                        <p data-translate="room-superior-desc">Our finest accommodation featuring premium amenities and the best views. Perfect for special occasions or travelers seeking luxury on the island.</p>
+                        <ul class="amenities">
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-lake-views">Lake Titicaca views</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-premium-bathroom">Premium bathroom</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-sitting-area">Sitting area</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate="amenity-breakfast">Complimentary breakfast</span></li>
+                        </ul>
+                        <div class="room-footer">
+                            <a href="https://wa.me/59171270122?text=Hello! I would like to book the Superior Room at Hostal Margarita on Isle del Sol. Could you please check availability and current rates?" class="book-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> <span data-translate="book-now">Book Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <h2 data-translate="activities-title">Explore Isle del Sol</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <i class="fas fa-hiking"></i>
+                    <h3 data-translate="activity-ruins-title">Ancient Ruins Trek</h3>
+                    <p data-translate="activity-ruins-desc">Explore the sacred Inca ruins and temples scattered across the island, including the famous Pilko Kaina complex.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-water"></i>
+                    <h3 data-translate="activity-boat-title">Lake Titicaca Boat Tours</h3>
+                    <p data-translate="activity-boat-desc">Discover the crystal-clear waters of the world's highest navigable lake on traditional boats.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-sun"></i>
+                    <h3 data-translate="activity-sunset-title">Sunrise & Sunset Views</h3>
+                    <p data-translate="activity-sunset-desc">Witness breathtaking sunrises and sunsets over the Andes from our scenic viewpoints.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-users"></i>
+                    <h3 data-translate="activity-culture-title">Cultural Experiences</h3>
+                    <p data-translate="activity-culture-desc">Meet local families and learn about traditional Aymara culture and ancient customs.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-camera"></i>
+                    <h3 data-translate="activity-photo-title">Photography Tours</h3>
+                    <p data-translate="activity-photo-desc">Capture the stunning landscapes and unique architecture with guided photography walks.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3 data-translate="activity-nature-title">Nature Walks</h3>
+                    <p data-translate="activity-nature-desc">Explore the island's diverse flora and fauna on peaceful walking trails.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 data-translate="reviews-title">What Our Guests Say</h2>
+            <div class="reviews-header">
+                <div class="rating-summary">
+                    <div class="google-rating">
+                        <div class="google-logo-text">Google</div>
+                        <div class="rating-info">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="rating-text">
+                                <span class="rating-number">4.8</span>
+                                <span class="rating-label">Excellent on Google Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reviews-carousel">
+                <div class="reviews-container">
+                    <div class="review-slide active">
+                        <div class="reviews-grid-two">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <h4>Vahit Saydam</h4>
+                                        <p class="reviewer-badge">Local Guide • 100 reviews • 72 photos</p>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="review-date">a month ago</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">"I stayed here for one night and my stay was very pleasant. The owners are very kind and go above and beyond to make your stay comfortable. The price is reasonable. The location is very close to the beach. It has a terrace where you can just chill. I highly recommend this place."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <h4>Manuel Knecht</h4>
+                                        <p class="reviewer-badge">Local Guide • 28 reviews • 4 photos</p>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="review-date">9 months ago</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">"Simple Hostel with clean and spacious rooms with great views. We even got upgraded to a room with private bathroom. The bed is comfy but a bit hard and there are plenty of blankets to keep you warm during the night. The owners are very friendly and helpful."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="reviews-grid-two">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <h4>virág tye</h4>
+                                        <p class="reviewer-badge">3 reviews • 1 photo</p>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="review-date">a year ago</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">"Germán and Margarita are the nicest hosts, we were truly lucky to find their hostel. Germán took us for a guided tour that was one of our most memorable part of our time on Isla del Sol. highly recommended ❤️"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <h4>Camille Guitton</h4>
+                                        <p class="reviewer-badge">5 reviews</p>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="review-date">11 months ago</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">"We spent one night at Margarita's on July 27th. Hot water, clean room, warm welcome. There's no heating, but the blankets on the beds and the building's construction meant we weren't cold. We recommend it!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="reviews-grid-two">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <h4>Paloma Macia</h4>
+                                        <p class="reviewer-badge">2 reviews</p>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">★★★★★</div>
+                                        <span class="review-date">a year ago</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">"I highly recommend staying at this hostel in every way. The rooms are very clean and the place is beautiful. Meeting Germán and his family makes the visit to Isla del Sol even more wonderful. We look forward to staying longer. We'll definitely be back."</p>
+                            </div>
+
+                            <div class="review-card placeholder">
+                                <div class="placeholder-content">
+                                    <i class="fas fa-star"></i>
+                                    <p>Join our happy guests and leave your own review!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0"></button>
+                    <button class="indicator" data-slide="1"></button>
+                    <button class="indicator" data-slide="2"></button>
+                </div>
+            </div>
+            
+            <div class="reviews-cta">
+                <p data-translate="reviews-cta-text">Join hundreds of satisfied guests who have experienced the warmth and hospitality of Hostal Margarita</p>
+                <a href="#contact" class="cta-button" data-translate="reviews-cta-button">Book Your Stay Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-translate="contact-title">Plan Your Visit</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-translate="contact-info-title">Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Parte norte isla del sol, Comunidad Challapampa<br>Lake Titicaca, Bolivia</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+59171270122</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@hostalmargarita.com</p>
+                    </div>
+                    
+                    <h4 data-translate="contact-directions-title">How to Get Here</h4>
+                    <p data-translate="contact-directions-desc">Take a boat from Copacabana harbor to Isle del Sol. Our hostal is located in the main village area, easily accessible from the boat landing.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://wa.me/59171270122?text=Hello! I would like to get more information about Hostal Margarita on Isle del Sol. Could you please help me with availability and rates?" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="location-info">
+                    <h3 data-translate="location-title">About Isle del Sol</h3>
+                    <div class="location-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <h4 data-translate="boat-schedule-title">Boat Schedule</h4>
+                            <p data-translate="boat-schedule-desc">Boats from Copacabana depart at 8:30 AM and 1:30 PM daily. Return trips at 10:30 AM and 3:30 PM.</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-info-circle"></i>
+                            <h4 data-translate="island-tips-title">Island Tips</h4>
+                            <p data-translate="island-tips-desc">Bring warm clothes for evening, comfortable walking shoes, and cash (no ATMs on the island).</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-sun"></i>
+                            <h4 data-translate="best-time-title">Best Time to Visit</h4>
+                            <p data-translate="best-time-desc">April to October offers clear skies and dry weather. Peak season is June to August.</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-heart"></i>
+                            <h4 data-translate="why-choose-title">Why Choose Us</h4>
+                            <p data-translate="why-choose-desc">Family-run hostal with personal attention, local knowledge, and genuine Bolivian hospitality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-cta">
+                        <h4 data-translate="contact-cta-title">Ready to Experience Isle del Sol?</h4>
+                        <p data-translate="contact-cta-desc">Contact us directly via WhatsApp for instant responses about availability, rates, and travel tips!</p>
+                        <a href="https://wa.me/59171270122?text=Hello! I'm interested in staying at Hostal Margarita. Can you help me with booking information?" class="whatsapp-cta" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-translate="whatsapp-cta">Message Us on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer-copyright">&copy; 2025 Hostal Margarita, Isle del Sol. All rights reserved.</p>
+            <p data-translate="footer-tagline">Experience the magic of Lake Titicaca at Bolivia's most beautiful island destination.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
