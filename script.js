@@ -1,125 +1,111 @@
-// Mobile Navigation Toggle
+// Reviews carousel functionality - Show only 2 reviews, cycle every 4 seconds
+let currentSlide = 0;
+const slides = document.querySelectorAll('.review-slide');
+const indicators = document.querySelectorAll('.indicator');
+
+function showSlide(index) {
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // Show current slide
+    if (slides[index]) {
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+    }
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Auto-advance slides every 4 seconds
+function startCarousel() {
+    setInterval(nextSlide, 4000);
+}
+
+// Manual navigation
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+    });
+});
+
+// Enhanced scroll effects for navbar
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroImage = document.querySelector('.hero-image img');
+    if (heroImage) {
+        heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// Enhanced intersection observer with stagger animation
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 100); // Stagger effect
+        }
+    });
+}, observerOptions);
+
+// Mobile menu toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
-    // Animate hamburger menu
-    navToggle.classList.toggle('active');
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
     });
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-});
-
-// Contact form handling
-const contactForm = document.querySelector('.contact-form form');
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const formObject = {};
-    formData.forEach((value, key) => {
-        formObject[key] = value;
-    });
-    
-    // Simple form validation
-    const requiredFields = this.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            field.style.borderColor = '#e74c3c';
-            isValid = false;
-        } else {
-            field.style.borderColor = '#e9ecef';
-        }
-    });
-    
-    if (isValid) {
-        // Show success message
-        const submitBtn = this.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Message Sent!';
-        submitBtn.style.background = '#27ae60';
-        
-        // Reset form
-        this.reset();
-        
-        // Reset button after 3 seconds
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)';
-        }, 3000);
-        
-        // In a real implementation, you would send the data to a server
-        console.log('Form submitted:', formObject);
-    }
-});
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
+// Smooth reveal animations for elements
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.feature, .room-card, .activity-card');
-    animateElements.forEach(el => {
+    const animateElements = document.querySelectorAll('.feature, .room-card, .activity-card, .review-card, .highlight-item');
+    animateElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        observer.observe(el);
+        staggerObserver.observe(el);
     });
-});
-
-// Add loading animation for the hero image
-window.addEventListener('load', () => {
-    const heroImage = document.querySelector('.hero-image img');
-    if (heroImage) {
-        heroImage.style.animation = 'fadeIn 1.5s ease';
+    
+    // Initialize carousel
+    if (slides.length > 0) {
+        showSlide(0);
+        startCarousel();
     }
+    
+    // Add floating animation to particles
+    const particles = document.querySelectorAll('.particle');
+    particles.forEach((particle, index) => {
+        particle.style.animationDelay = `${index * 0.5}s`;
+        particle.style.animationDuration = `${6 + (index % 3)}s`;
+    });
 });
 
 // Add CSS for fade in animation
@@ -143,63 +129,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
-// Reviews Carousel Functionality
-let currentSlide = 0;
-const slides = document.querySelectorAll('.review-slide');
-const indicators = document.querySelectorAll('.indicator');
-let slideInterval;
-
-function showSlide(n) {
-    // Hide all slides
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    // Show current slide
-    if (slides[n]) {
-        slides[n].classList.add('active');
-        indicators[n].classList.add('active');
-    }
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-function startCarousel() {
-    slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
-}
-
-function stopCarousel() {
-    clearInterval(slideInterval);
-}
-
-// Initialize carousel when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    // Start the reviews carousel
-    if (slides.length > 0) {
-        startCarousel();
-        
-        // Add click handlers for indicators
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentSlide = index;
-                showSlide(currentSlide);
-                // Restart the timer when user manually clicks
-                stopCarousel();
-                startCarousel();
-            });
-        });
-        
-        // Pause carousel on hover
-        const carousel = document.querySelector('.reviews-carousel');
-        if (carousel) {
-            carousel.addEventListener('mouseenter', stopCarousel);
-            carousel.addEventListener('mouseleave', startCarousel);
-        }
-    }
-});
 
 // Translation functionality
 const translations = {
