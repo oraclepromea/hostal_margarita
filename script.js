@@ -33,6 +33,41 @@ indicators.forEach((indicator, index) => {
     });
 });
 
+// Gallery carousel functionality - Auto-cycle every 4 seconds
+let galleryCurrentSlide = 0;
+const gallerySlides = document.querySelectorAll('.gallery-slide');
+const galleryIndicators = document.querySelectorAll('.gallery-indicator');
+
+function showGallerySlide(index) {
+    // Hide all slides
+    gallerySlides.forEach(slide => slide.classList.remove('active'));
+    galleryIndicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // Show current slide
+    if (gallerySlides[index]) {
+        gallerySlides[index].classList.add('active');
+        galleryIndicators[index].classList.add('active');
+    }
+}
+
+function nextGallerySlide() {
+    galleryCurrentSlide = (galleryCurrentSlide + 1) % gallerySlides.length;
+    showGallerySlide(galleryCurrentSlide);
+}
+
+// Auto-advance gallery slides every 4 seconds
+function startGalleryCarousel() {
+    setInterval(nextGallerySlide, 4000);
+}
+
+// Manual navigation for gallery
+galleryIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        galleryCurrentSlide = index;
+        showGallerySlide(galleryCurrentSlide);
+    });
+});
+
 // Enhanced scroll effects for navbar
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -94,10 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
         staggerObserver.observe(el);
     });
     
-    // Initialize carousel
+    // Initialize review carousel
     if (slides.length > 0) {
         showSlide(0);
         startCarousel();
+    }
+    
+    // Initialize gallery carousel
+    if (gallerySlides.length > 0) {
+        showGallerySlide(0);
+        startGalleryCarousel();
     }
     
     // Add floating animation to particles
